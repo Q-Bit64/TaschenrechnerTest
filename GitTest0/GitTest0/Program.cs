@@ -40,7 +40,7 @@ namespace GitTest0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Leo");
+            Console.WriteLine("Hello Max");
 
             IDo x = new B();
 
