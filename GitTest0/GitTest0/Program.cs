@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+
+using System.Diagnostics;
 
 namespace GitTest0
 {
@@ -12,10 +17,21 @@ namespace GitTest0
         PlusOp = TokenCategory.MathOperator | 1,
         MinusOp = TokenCategory.MathOperator | 2,
         SomethingElse = TokenCategory.OtherCategory | 1,
-
-
     }
 
+    [DebuggerDisplay("Count = {x}")]
+    class Secret
+    {
+        private int S1, S2;
+        public Secret(int a, int b)
+        {
+            S1 = 2 * a;
+            S2 = b + 3;
+        }
+        // Noch ne änderung
+
+        private int x { get => S1; }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -26,9 +42,15 @@ namespace GitTest0
 
             TokenType PO = TokenType.PlusOp;
 
+            Dictionary<int, string> Dic = new Dictionary<int, string>();
+            Dic.Add(0, "Hi");
 
-            if (PO & TokenCategory.MathOperator != 0)
-                Console.WriteLine("hi");
+
+            Secret S = new Secret(1, 2);
+
+
+            //if (PO & TokenCategory.MathOperator != 0)
+            //    Console.WriteLine("hi");
 
             Console.WriteLine(x.Do());
 
